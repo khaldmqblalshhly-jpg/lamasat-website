@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: khaldmqblalshhly-jpg/lamasat-website
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "pages"
+    label: "صفحات الموقع"
+    files:
+      - file: "index.html"
+        label: "الصفحة الرئيسية"
+        name: "home"
+        fields:
+          - {label: "العنوان الرئيسي للموقع", name: "title", widget: "string"}
+          - {label: "وصف الخدمات", name: "description", widget: "text"}
+          - {label: "رابط إنستغرام لمسات", name: "instagram_url", widget: "string"}
+          - {label: "باقات الفعاليات والمناسبات", name: "packages", widget: "list", fields: [
+              {label: "اسم الباقة", name: "name", widget: "string"},
+              {label: "السعر", name: "price", widget: "string"},
+              {label: "المميزات", name: "features", widget: "list", field: {label: "الميزة", name: "feature", widget: "string"}}
+            ]}
